@@ -1,0 +1,448 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C93F976F1B0233770078195A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C93F976E1B0233770078195A /* main.m */; };
+		C93F97721B0233770078195A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C93F97711B0233770078195A /* AppDelegate.m */; };
+		C93F97751B0233770078195A /* EBookStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C93F97731B0233770078195A /* EBookStore.xcdatamodeld */; };
+		C93F97781B0233770078195A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93F97771B0233770078195A /* ViewController.m */; };
+		C93F977B1B0233770078195A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C93F97791B0233770078195A /* Main.storyboard */; };
+		C93F977D1B0233770078195A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C93F977C1B0233770078195A /* Images.xcassets */; };
+		C93F97801B0233770078195A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93F977E1B0233770078195A /* LaunchScreen.xib */; };
+		C93F978C1B0233770078195A /* EBookStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C93F978B1B0233770078195A /* EBookStoreTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C93F97861B0233770078195A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C93F97611B0233770078195A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C93F97681B0233770078195A;
+			remoteInfo = EBookStore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C93F97691B0233770078195A /* EBookStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EBookStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C93F976D1B0233770078195A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C93F976E1B0233770078195A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C93F97701B0233770078195A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C93F97711B0233770078195A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C93F97741B0233770078195A /* EBookStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EBookStore.xcdatamodel; sourceTree = "<group>"; };
+		C93F97761B0233770078195A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C93F97771B0233770078195A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C93F977A1B0233770078195A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C93F977C1B0233770078195A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C93F977F1B0233770078195A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		C93F97851B0233770078195A /* EBookStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EBookStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C93F978A1B0233770078195A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C93F978B1B0233770078195A /* EBookStoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EBookStoreTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C93F97661B0233770078195A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C93F97821B0233770078195A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C93F97601B0233770078195A = {
+			isa = PBXGroup;
+			children = (
+				C93F976B1B0233770078195A /* EBookStore */,
+				C93F97881B0233770078195A /* EBookStoreTests */,
+				C93F976A1B0233770078195A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C93F976A1B0233770078195A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C93F97691B0233770078195A /* EBookStore.app */,
+				C93F97851B0233770078195A /* EBookStoreTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C93F976B1B0233770078195A /* EBookStore */ = {
+			isa = PBXGroup;
+			children = (
+				C93F97701B0233770078195A /* AppDelegate.h */,
+				C93F97711B0233770078195A /* AppDelegate.m */,
+				C93F97761B0233770078195A /* ViewController.h */,
+				C93F97771B0233770078195A /* ViewController.m */,
+				C93F97791B0233770078195A /* Main.storyboard */,
+				C93F977C1B0233770078195A /* Images.xcassets */,
+				C93F977E1B0233770078195A /* LaunchScreen.xib */,
+				C93F97731B0233770078195A /* EBookStore.xcdatamodeld */,
+				C93F976C1B0233770078195A /* Supporting Files */,
+			);
+			path = EBookStore;
+			sourceTree = "<group>";
+		};
+		C93F976C1B0233770078195A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C93F976D1B0233770078195A /* Info.plist */,
+				C93F976E1B0233770078195A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C93F97881B0233770078195A /* EBookStoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				C93F978B1B0233770078195A /* EBookStoreTests.m */,
+				C93F97891B0233770078195A /* Supporting Files */,
+			);
+			path = EBookStoreTests;
+			sourceTree = "<group>";
+		};
+		C93F97891B0233770078195A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C93F978A1B0233770078195A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C93F97681B0233770078195A /* EBookStore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C93F978F1B0233770078195A /* Build configuration list for PBXNativeTarget "EBookStore" */;
+			buildPhases = (
+				C93F97651B0233770078195A /* Sources */,
+				C93F97661B0233770078195A /* Frameworks */,
+				C93F97671B0233770078195A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EBookStore;
+			productName = EBookStore;
+			productReference = C93F97691B0233770078195A /* EBookStore.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C93F97841B0233770078195A /* EBookStoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C93F97921B0233770078195A /* Build configuration list for PBXNativeTarget "EBookStoreTests" */;
+			buildPhases = (
+				C93F97811B0233770078195A /* Sources */,
+				C93F97821B0233770078195A /* Frameworks */,
+				C93F97831B0233770078195A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C93F97871B0233770078195A /* PBXTargetDependency */,
+			);
+			name = EBookStoreTests;
+			productName = EBookStoreTests;
+			productReference = C93F97851B0233770078195A /* EBookStoreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C93F97611B0233770078195A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "李巍";
+				TargetAttributes = {
+					C93F97681B0233770078195A = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					C93F97841B0233770078195A = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = C93F97681B0233770078195A;
+					};
+				};
+			};
+			buildConfigurationList = C93F97641B0233770078195A /* Build configuration list for PBXProject "EBookStore" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C93F97601B0233770078195A;
+			productRefGroup = C93F976A1B0233770078195A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C93F97681B0233770078195A /* EBookStore */,
+				C93F97841B0233770078195A /* EBookStoreTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C93F97671B0233770078195A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C93F977B1B0233770078195A /* Main.storyboard in Resources */,
+				C93F97801B0233770078195A /* LaunchScreen.xib in Resources */,
+				C93F977D1B0233770078195A /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C93F97831B0233770078195A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C93F97651B0233770078195A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C93F97751B0233770078195A /* EBookStore.xcdatamodeld in Sources */,
+				C93F97721B0233770078195A /* AppDelegate.m in Sources */,
+				C93F97781B0233770078195A /* ViewController.m in Sources */,
+				C93F976F1B0233770078195A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C93F97811B0233770078195A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C93F978C1B0233770078195A /* EBookStoreTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C93F97871B0233770078195A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C93F97681B0233770078195A /* EBookStore */;
+			targetProxy = C93F97861B0233770078195A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C93F97791B0233770078195A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C93F977A1B0233770078195A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C93F977E1B0233770078195A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C93F977F1B0233770078195A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C93F978D1B0233770078195A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C93F978E1B0233770078195A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C93F97901B0233770078195A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = EBookStore/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C93F97911B0233770078195A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = EBookStore/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C93F97931B0233770078195A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = EBookStoreTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EBookStore.app/EBookStore";
+			};
+			name = Debug;
+		};
+		C93F97941B0233770078195A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = EBookStoreTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EBookStore.app/EBookStore";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C93F97641B0233770078195A /* Build configuration list for PBXProject "EBookStore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C93F978D1B0233770078195A /* Debug */,
+				C93F978E1B0233770078195A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C93F978F1B0233770078195A /* Build configuration list for PBXNativeTarget "EBookStore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C93F97901B0233770078195A /* Debug */,
+				C93F97911B0233770078195A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C93F97921B0233770078195A /* Build configuration list for PBXNativeTarget "EBookStoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C93F97931B0233770078195A /* Debug */,
+				C93F97941B0233770078195A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C93F97731B0233770078195A /* EBookStore.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C93F97741B0233770078195A /* EBookStore.xcdatamodel */,
+			);
+			currentVersion = C93F97741B0233770078195A /* EBookStore.xcdatamodel */;
+			path = EBookStore.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C93F97611B0233770078195A /* Project object */;
+}

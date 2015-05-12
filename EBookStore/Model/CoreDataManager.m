@@ -7,7 +7,7 @@
 //
 
 #import "CoreDataManager.h"
-#import "EBook.h"
+#import "EBookModel.h"
 
 @implementation CoreDataManager
 
@@ -20,28 +20,37 @@
 	return _sharedObject;
 }
 
-- (EBook *)insertEBookWithIdentifier:(NSDictionary *)bookInfo {
-	NSEntityDescription *entity = [NSEntityDescription entityForName:[EBook entityName] inManagedObjectContext:self.managedObjectContext];
-	EBook *book = [[EBook alloc] initWithEntity:entity insertIntoManagedObjectContext:self.managedObjectContext];
-	book.identifier = bookInfo[@"id"];
-	book.title = bookInfo[@"title"];
-	book.author = bookInfo[@"author"];
-    [book setValue:@(0) forKey:@"currentPage"];
-    [book setValue:@(0) forKey:@"maxPageCount"];
-    [book setValue:@([bookInfo[@"type"] integerValue]) forKey:@"type"];
-	[self saveContext];
-	return book;
+#pragma mark -
+
+- (BOOL)insertModelWithJSON:(NSDictionary *)json {
+    NSError *error = nil;
+    EBookModel *model = [MTLJSONAdapter modelOfClass:[EBookModel class] fromJSONDictionary:json error:&error];
+    if (error) {
+        NSLog(@"转换对象错误：%@", [error localizedDescription]);
+        return NO;
+    }
+    return [self insertModel:model];
 }
 
-- (void)updateEBookWithModel:(EBook *)eBook {
-	EBook *book = [self fetchEBookWithBookIdentifier:eBook.identifier];
-	[book updateWithModel:eBook];
-	[self saveContext];
+- (BOOL)insertModel:(EBookModel *)model {
+    NSError *error = nil;
+    id obj = [MTLManagedObjectAdapter managedObjectFromModel:model insertingIntoContext:self.managedObjectContext error:&error];
+    NSLog(@"obj class = %@", [obj class]);
+    if (error) {
+        NSLog(@"insertModelByCoreData 插入新对象错误：%@", [error localizedDescription]);
+        return NO;
+    }
+    [self saveContext];
+    return YES;
 }
 
-- (EBook *)fetchEBookWithBookIdentifier:(NSString *)identifier {
+- (BOOL)updateModel:(EBookModel *)model {
+    return [self insertModel:model];
+}
+
+- (EBookModel *)fetchEBookWithBookIdentifier:(NSString *)identifier {
 	NSError *error = nil;
-	NSString *entityName = [[EBook class] entityName];
+	NSString *entityName = [[EBookModel class] entityName];
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:self.managedObjectContext];
 	[fetchRequest setEntity:entity];
@@ -58,7 +67,12 @@
 		NSLog(@"查询书籍错误 %@",error);
 		return nil;
 	}
-	return [fetchedObjects lastObject];
+    EBookModel *model = [MTLManagedObjectAdapter modelOfClass:[EBookModel class] fromManagedObject:[fetchedObjects lastObject] error:&error];
+    if (error) {
+        NSLog(@"查询结果转模型错误 %@", error);
+        return nil;
+    }
+	return model;
 }
 
 #pragma mark - Core Data stack
@@ -77,7 +91,7 @@
 	if (_managedObjectModel != nil) {
 		return _managedObjectModel;
 	}
-	NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"JinyongAllInOne" withExtension:@"momd"];
+	NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"EBookStore" withExtension:@"momd"];
 	_managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
 	return _managedObjectModel;
 }
@@ -91,7 +105,7 @@
 	// Create the coordinator and store
 	
 	_persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-	NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"JinyongAllInOne.sqlite"];
+	NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"EBookStore.sqlite"];
 	NSError *error = nil;
 	NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:@(YES), NSMigratePersistentStoresAutomaticallyOption, @(YES), NSInferMappingModelAutomaticallyOption, nil];
 	NSString *failureReason = @"There was an error creating or loading the application's saved data.";

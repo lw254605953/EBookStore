@@ -9,14 +9,17 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class EBook;
+@class EBookModel;
 
 @interface CoreDataManager : NSObject
 
 + (instancetype)sharedInstance;
-- (EBook *)insertEBookWithIdentifier:(NSDictionary *)bookInfo;
-- (void)updateEBookWithModel:(EBook *)eBook;
-- (EBook *)fetchEBookWithBookIdentifier:(NSString *)identifier;
+
+- (BOOL)insertModelWithJSON:(NSDictionary *)json;
+- (BOOL)insertModel:(EBookModel *)model;
+- (BOOL)updateModel:(EBookModel *)model;
+
+- (EBookModel *)fetchEBookWithBookIdentifier:(NSString *)identifier;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;

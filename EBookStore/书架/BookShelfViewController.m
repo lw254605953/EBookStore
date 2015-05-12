@@ -15,7 +15,7 @@
 
 #import <SVProgressHUD/SVProgressHUD.h>
 
-#import "EBook.h"
+#import "EBookModel.h"
 #import "CoreDataManager.h"
 
 @interface BookShelfViewController ()
@@ -78,29 +78,26 @@
 #pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    __weak typeof(self) weakSelf = self;
-
-	BookMasterViewController *master = [self.storyboard instantiateViewControllerWithIdentifier:@"BookMasterViewController"];
-	[SVProgressHUD showWithStatus:@"正在读取数据"];
-	
 	NSDictionary *book = self.searchResults[indexPath.item];
-	EBook *eBook = [[CoreDataManager sharedInstance] fetchEBookWithBookIdentifier:book[@"id"]];
+	EBookModel *eBook = [[CoreDataManager sharedInstance] fetchEBookWithBookIdentifier:book[@"id"]];
 	if (eBook == nil) {
-		eBook = [[CoreDataManager sharedInstance] insertEBookWithIdentifier:book];
+		[[CoreDataManager sharedInstance] insertModelWithJSON:book];
+        eBook = [[CoreDataManager sharedInstance] fetchEBookWithBookIdentifier:book[@"id"]];
 	}
-	master.eBook = eBook;
-//	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//        
-//	});
     
-    [[BookContentDataSource sharedInstance] setupWithBookName:weakSelf.books[indexPath.item][@"title"]];
-    if ([weakSelf.searchBar isFirstResponder]) {
-        [weakSelf.searchBar resignFirstResponder];
-    }
-    [weakSelf presentViewController:master animated:YES completion:^{
-        [SVProgressHUD dismiss];
-    }];
-	
+    BookMasterViewController *master = [self.storyboard instantiateViewControllerWithIdentifier:@"BookMasterViewController"];
+    [SVProgressHUD showWithStatus:@"正在读取数据"];
+    
+    __weak typeof(self) weakSelf = self;
+	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [[BookContentDataSource sharedInstance] setupWithBook:eBook];
+        if ([weakSelf.searchBar isFirstResponder]) {
+            [weakSelf.searchBar resignFirstResponder];
+        }
+        [weakSelf presentViewController:master animated:YES completion:^{
+            [SVProgressHUD dismiss];
+        }];
+	});
 }
 
 

@@ -33,6 +33,9 @@
 	[self.view addGestureRecognizer:tapGesture];
 	
 	self.pageLabel.text = [NSString stringWithFormat:@"第  %zd  页", self.pageIndex];
+    if (self.pageIndex == 0) {
+        self.pageLabel.text = @"封面";
+    }
 }
 
 - (void)viewDidLayoutSubviews {

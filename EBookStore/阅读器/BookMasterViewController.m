@@ -10,30 +10,29 @@
 #import "BookPageViewController.h"
 #import "BookPageContentViewController.h"
 
-#import "EBook.h"
+#import "EBookModel.h"
 
 @interface BookMasterViewController ()
 
 @property (strong, nonatomic) BookPageViewController *pageViewController;
-@property (strong, nonatomic) NSArray *pageContent;
 
 @end
 
 @implementation BookMasterViewController
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-	
-	self.pageViewController = [self.childViewControllers firstObject];
-	self.pageViewController.eBook = self.eBook;
-	[self.pageViewController setupWithFirstPage:self.eBook.currentPage];
-	
+    self.pageViewController = [self.childViewControllers firstObject];
 	self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-	[super viewWillAppear:animated];
+	[super viewWillAppear:animated]; 
 }
 
 - (void)didReceiveMemoryWarning {

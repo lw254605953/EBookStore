@@ -40,11 +40,12 @@
 	return self;
 }
 
-- (void)setupWithBookName:(NSString *)bookName {
+- (void)setupWithBook:(EBookModel *)model {
+    self.eBook = model;
 	if (!self.pageContainers) {
 		self.pageContainers = [[NSMutableArray alloc] initWithCapacity:20];
 	}
-	self.textStorage = [[NSTextStorage alloc] initWithString:[self loadDataWithBookName:bookName]];
+	self.textStorage = [[NSTextStorage alloc] initWithString:[self loadDataWithBookName:model.title]];
 	[self.textStorage addAttributes:[self contentAttributes] range:NSMakeRange(0, [self.textStorage.string length])];
 	self.contentLayoutManager = [[NSLayoutManager alloc] init];
 	[self.textStorage addLayoutManager:self.contentLayoutManager];
@@ -68,11 +69,7 @@
 }
 
 - (NSTextContainer *)calculatePageContainerAtIndex:(NSInteger)index withContainerSize:(CGSize)size {
-//    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//        
-//    });
-    NSInteger count = index + 1;
-    for (int i = 0; i < 1; i++) {
+    for (int i = 0; i <= index; i++) {
         if (i >= [self.pageContainers count]) {
             NSTextContainer *container = [[NSTextContainer alloc] initWithSize:size];
             [self.contentLayoutManager addTextContainer:container];

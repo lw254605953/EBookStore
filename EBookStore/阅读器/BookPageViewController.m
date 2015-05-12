@@ -11,10 +11,12 @@
 #import "BookContentDataSource.h"
 #import <SVProgressHUD/SVProgressHUD.h>
 
-#import "EBook.h"
+#import "EBookModel.h"
 #import "CoreDataManager.h"
 
 @interface BookPageViewController ()
+
+@property (strong, nonatomic) EBookModel *eBook;
 
 @property (assign, nonatomic) NSInteger maxPageCount;
 
@@ -29,8 +31,12 @@
     [super awakeFromNib];
 	self.delegate = self;
 	self.dataSource = self;
-
 	self.maxPageCount = [[BookContentDataSource sharedInstance] maxPageCount];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setupWithFirstPage:[BookContentDataSource sharedInstance].eBook.currentPage];
 }
 
 - (void)setupWithFirstPage:(NSInteger)pageIndex {
@@ -45,8 +51,10 @@
 
 - (void)setCurrentPageIndex:(NSInteger)currentPageIndex {
 	_currentPageIndex = currentPageIndex;
-    [self.eBook setValue:@(currentPageIndex) forKey:@"currentPage"];
-	[[CoreDataManager sharedInstance] updateEBookWithModel:self.eBook];
+    
+    EBookModel *model = [BookContentDataSource sharedInstance].eBook;
+    model.currentPage = currentPageIndex;
+	[[CoreDataManager sharedInstance] updateModel:model];
 }
 
 #pragma mark -
@@ -105,9 +113,6 @@
 	if (completed) {
 		//翻页完成
 		self.currentPageIndex = self.templePageIndex;
-		NSLog(@"%zd / %zd", self.currentPageIndex, self.maxPageCount);
-		
-		
 		
 	}else{ //翻页未完成 又回来了。
 		if (NO) {

@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EBookModel.h"
 
 @interface BookContentDataSource : NSObject
 
 + (instancetype)sharedInstance;
 
-- (void)setupWithBookName:(NSString *)bookName;
+- (void)setupWithBook:(EBookModel *)model;
 
 - (void)restore;
 
@@ -22,5 +23,7 @@
 - (NSDictionary *)contentAttributes;
 
 - (NSUInteger)maxPageCount;
+
+@property (strong, nonatomic) EBookModel *eBook;
 
 @end

@@ -8,12 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class EBook;
-
 @interface BookPageViewController : UIPageViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
-
-@property (strong, nonatomic) EBook *eBook;
-
-- (void)setupWithFirstPage:(NSInteger)pageIndex;
 
 @end

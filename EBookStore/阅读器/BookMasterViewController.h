@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class EBook;
-
 @interface BookMasterViewController : UIViewController
-
-@property (strong, nonatomic) EBook *eBook;
 
 @end

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>id</key>
+		<string>100001</string>
+		<key>img</key>
+		<string></string>
+		<key>title</key>
+		<string>千年诅咒</string>
+		<key>author</key>
+		<string>苏亚娟</string>
+		<key>type</key>
+		<string>3</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<string>100002</string>
+		<key>img</key>
+		<string></string>
+		<key>title</key>
+		<string>雪山飞狐</string>
+		<key>author</key>
+		<string>金庸</string>
+		<key>type</key>
+		<string>0</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<string>100003</string>
+		<key>img</key>
+		<string>爱在仙境的日子</string>
+		<key>title</key>
+		<string>爱在仙境的日子</string>
+		<key>author</key>
+		<string>无名1</string>
+		<key>type</key>
+		<string>1</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<string>100004</string>
+		<key>img</key>
+		<string>十年</string>
+		<key>title</key>
+		<string>十年</string>
+		<key>author</key>
+		<string>无名2</string>
+		<key>type</key>
+		<string>1</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<string>100005</string>
+		<key>img</key>
+		<string>最熟悉的陌生人</string>
+		<key>title</key>
+		<string>最熟悉的陌生人</string>
+		<key>author</key>
+		<string>无名3</string>
+		<key>type</key>
+		<string>1</string>
+	</dict>
+</array>
+</plist>

@@ -10,11 +10,11 @@
 		C93F976F1B0233770078195A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C93F976E1B0233770078195A /* main.m */; };
 		C93F97721B0233770078195A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C93F97711B0233770078195A /* AppDelegate.m */; };
 		C93F97751B0233770078195A /* EBookStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C93F97731B0233770078195A /* EBookStore.xcdatamodeld */; };
-		C93F97781B0233770078195A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93F97771B0233770078195A /* ViewController.m */; };
 		C93F977B1B0233770078195A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C93F97791B0233770078195A /* Main.storyboard */; };
 		C93F977D1B0233770078195A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C93F977C1B0233770078195A /* Images.xcassets */; };
 		C93F97801B0233770078195A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93F977E1B0233770078195A /* LaunchScreen.xib */; };
 		C93F978C1B0233770078195A /* EBookStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C93F978B1B0233770078195A /* EBookStoreTests.m */; };
+		FA5218C4DC68B1D711CA0C30 /* libPods-EBookStore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF6CE95C1EBAE10A47B25C75 /* libPods-EBookStore.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,20 +28,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		083997DF5DD8CF9DC9652924 /* Pods-EBookStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EBookStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EBookStore/Pods-EBookStore.debug.xcconfig"; sourceTree = "<group>"; };
+		7D863A98C878C434CFBCBDF2 /* Pods-EBookStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EBookStore.release.xcconfig"; path = "Pods/Target Support Files/Pods-EBookStore/Pods-EBookStore.release.xcconfig"; sourceTree = "<group>"; };
 		C93F97691B0233770078195A /* EBookStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EBookStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C93F976D1B0233770078195A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C93F976E1B0233770078195A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C93F97701B0233770078195A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C93F97711B0233770078195A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C93F97741B0233770078195A /* EBookStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EBookStore.xcdatamodel; sourceTree = "<group>"; };
-		C93F97761B0233770078195A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C93F97771B0233770078195A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C93F977A1B0233770078195A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C93F977C1B0233770078195A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C93F977F1B0233770078195A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C93F97851B0233770078195A /* EBookStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EBookStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C93F978A1B0233770078195A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C93F978B1B0233770078195A /* EBookStoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EBookStoreTests.m; sourceTree = "<group>"; };
+		FF6CE95C1EBAE10A47B25C75 /* libPods-EBookStore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EBookStore.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA5218C4DC68B1D711CA0C30 /* libPods-EBookStore.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,12 +64,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7204BCC5D3B4E348677E22F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF6CE95C1EBAE10A47B25C75 /* libPods-EBookStore.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		78730D62A18DFDF3681DBE36 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				083997DF5DD8CF9DC9652924 /* Pods-EBookStore.debug.xcconfig */,
+				7D863A98C878C434CFBCBDF2 /* Pods-EBookStore.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C93F97601B0233770078195A = {
 			isa = PBXGroup;
 			children = (
 				C93F976B1B0233770078195A /* EBookStore */,
 				C93F97881B0233770078195A /* EBookStoreTests */,
 				C93F976A1B0233770078195A /* Products */,
+				78730D62A18DFDF3681DBE36 /* Pods */,
+				7204BCC5D3B4E348677E22F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,8 +106,9 @@
 			children = (
 				C93F97701B0233770078195A /* AppDelegate.h */,
 				C93F97711B0233770078195A /* AppDelegate.m */,
-				C93F97761B0233770078195A /* ViewController.h */,
-				C93F97771B0233770078195A /* ViewController.m */,
+				C93F97951B0233B60078195A /* 阅读器 */,
+				C93F97961B0233B60078195A /* 书架 */,
+				C93F97971B0233B60078195A /* Model */,
 				C93F97791B0233770078195A /* Main.storyboard */,
 				C93F977C1B0233770078195A /* Images.xcassets */,
 				C93F977E1B0233770078195A /* LaunchScreen.xib */,
@@ -122,6 +144,27 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C93F97951B0233B60078195A /* 阅读器 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "阅读器";
+			sourceTree = "<group>";
+		};
+		C93F97961B0233B60078195A /* 书架 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "书架";
+			sourceTree = "<group>";
+		};
+		C93F97971B0233B60078195A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,9 +172,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C93F978F1B0233770078195A /* Build configuration list for PBXNativeTarget "EBookStore" */;
 			buildPhases = (
+				48DCE2B72EF4F8AB9F1079C7 /* Check Pods Manifest.lock */,
 				C93F97651B0233770078195A /* Sources */,
 				C93F97661B0233770078195A /* Frameworks */,
 				C93F97671B0233770078195A /* Resources */,
+				03316811AAFC9764AA2A071D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -217,6 +262,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		03316811AAFC9764AA2A071D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EBookStore/Pods-EBookStore-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		48DCE2B72EF4F8AB9F1079C7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C93F97651B0233770078195A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -224,7 +302,6 @@
 			files = (
 				C93F97751B0233770078195A /* EBookStore.xcdatamodeld in Sources */,
 				C93F97721B0233770078195A /* AppDelegate.m in Sources */,
-				C93F97781B0233770078195A /* ViewController.m in Sources */,
 				C93F976F1B0233770078195A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,9 +426,11 @@
 		};
 		C93F97901B0233770078195A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 083997DF5DD8CF9DC9652924 /* Pods-EBookStore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = EBookStore/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -359,9 +438,11 @@
 		};
 		C93F97911B0233770078195A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D863A98C878C434CFBCBDF2 /* Pods-EBookStore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = EBookStore/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -420,6 +501,7 @@
 				C93F97911B0233770078195A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C93F97921B0233770078195A /* Build configuration list for PBXNativeTarget "EBookStoreTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +510,7 @@
 				C93F97941B0233770078195A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

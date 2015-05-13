@@ -10,4 +10,6 @@
 
 @interface BookPageViewController : UIPageViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
+- (void)setupWithFirstPage:(NSInteger)pageIndex;
+
 @end

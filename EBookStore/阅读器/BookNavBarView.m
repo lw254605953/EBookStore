@@ -16,7 +16,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
 	self = [super initWithFrame:frame];
 	if (self) {
-		self.backgroundColor = [UIColor colorWithWhite:0.4 alpha:0.8];
+		self.backgroundColor = [UIColor colorWithWhite:0.2 alpha:0.8];
 		self.exclusiveTouch = YES;
 		back = [UIButton buttonWithType:UIButtonTypeCustom];
 		[back setImage:[UIImage imageNamed:@"back_button_down"] forState:UIControlStateNormal];

@@ -78,9 +78,17 @@
 #pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+	[SVProgressHUD showWithStatus:@"正在读取数据"];
+	if ([self.searchBar isFirstResponder]) {
+		[self.searchBar resignFirstResponder];
+	}
+	[self loadBookWithIndex:indexPath.item];	
+}
+
+- (void)loadBookWithIndex:(NSInteger)index {
 	__weak typeof(self) weakSelf = self;
-	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-		NSDictionary *book = weakSelf.searchResults[indexPath.item];
+	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+		NSDictionary *book = weakSelf.searchResults[index];
 		EBookModel *eBook = [[CoreDataManager sharedInstance] fetchEBookWithBookIdentifier:book[@"id"]];
 		if (eBook == nil) {
 			[[CoreDataManager sharedInstance] insertModelWithJSON:book];
@@ -88,13 +96,10 @@
 		}
 		[[BookContentDataSource sharedInstance] setupWithBook:eBook];
 	});
-	if ([self.searchBar isFirstResponder]) {
-		[self.searchBar resignFirstResponder];
-	}
-	[SVProgressHUD showWithStatus:@"正在读取数据"];
-    BookMasterViewController *master = [self.storyboard instantiateViewControllerWithIdentifier:@"BookMasterViewController"];
+	
+	BookMasterViewController *master = [self.storyboard instantiateViewControllerWithIdentifier:@"BookMasterViewController"];
 	[self presentViewController:master animated:YES completion:^{
-		[SVProgressHUD dismiss];
+		[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
 	}];
 }
 

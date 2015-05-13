@@ -49,6 +49,7 @@
 	[self.textStorage addAttributes:[self contentAttributes] range:NSMakeRange(0, [self.textStorage.string length])];
 	self.contentLayoutManager = [[NSLayoutManager alloc] init];
 	[self.textStorage addLayoutManager:self.contentLayoutManager];
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"BookDataIsRedeyForShowNotification" object:nil];
 }
 
 - (void)restore {

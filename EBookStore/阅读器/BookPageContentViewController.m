@@ -18,6 +18,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *pageLabel;
 
+@property (assign, nonatomic) BOOL isShowText;
+
 @end
 
 @implementation BookPageContentViewController
@@ -37,17 +39,31 @@
         self.pageLabel.text = @"封面";
     }
 	
-	[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+	self.isShowText = NO;
 }
 
 - (void)viewDidLayoutSubviews {
 	[super viewDidLayoutSubviews];
-	[self showPageContent];
+	if (!self.isShowText) {
+		[self showPageContent];
+	}
+	NSLog(@"yyyyy = %f, frame size height === %f", self.contentView.frame.origin.y ,self.contentView.textContainer.size.height);
+	CGRect frame = self.contentView.frame;
+	if (frame.origin.y == -20) {
+		frame.origin.y = 0;
+		frame.size.height -= 20;
+		self.contentView.frame = frame;
+	}
+//	frame.origin.y = 0;
+//	self.contentView.frame = frame;
+	
 }
 
 - (void)showPageContent {
 	// 设置内容
+	NSLog(@"size w = %f, h = %f", self.contentView.textContainer.size.width, self.contentView.textContainer.size.height);
 	[self.contentView.textStorage setAttributedString:[[BookContentDataSource sharedInstance] contentAtPageIndex:self.pageIndex withContainerSize:self.contentView.textContainer.size]];
+	self.isShowText = YES;
 }
 
 - (void)tapContent:(UITapGestureRecognizer *)tap {
@@ -59,7 +75,7 @@
 			if (frame.size.height == 0) {
 				frame.size.height = 64;
 				[[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
-//				[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+				[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 			}else {
 				frame.size.height = 0;
 				[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];

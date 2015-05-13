@@ -36,7 +36,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupWithFirstPage:[BookContentDataSource sharedInstance].eBook.currentPage];
+
 }
 
 - (void)setupWithFirstPage:(NSInteger)pageIndex {
@@ -45,7 +45,7 @@
 	self.templePageIndex = pageIndex;
 	// 设置书籍的第一页
 	[self setViewControllers:@[[self bookContentControllerAtIndex:pageIndex]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:^(BOOL finished) {
-		
+		[SVProgressHUD dismiss];
 	}];
 }
 
@@ -53,8 +53,10 @@
 	_currentPageIndex = currentPageIndex;
     
     EBookModel *model = [BookContentDataSource sharedInstance].eBook;
-    model.currentPage = currentPageIndex;
-	[[CoreDataManager sharedInstance] updateModel:model];
+	if (model) {
+		model.currentPage = currentPageIndex;
+		[[CoreDataManager sharedInstance] updateModel:model];
+	}
 }
 
 #pragma mark -

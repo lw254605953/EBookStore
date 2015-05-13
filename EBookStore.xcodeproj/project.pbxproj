@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3C24C861B0305D600E397A7 /* EBQRCodeMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C24C7F1B0305D600E397A7 /* EBQRCodeMaker.m */; };
+		B3C24C871B0305D600E397A7 /* GCDMulticastDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C24C811B0305D600E397A7 /* GCDMulticastDelegate.m */; };
+		B3C24C881B0305D600E397A7 /* LWIconTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C24C831B0305D600E397A7 /* LWIconTextAttachment.m */; };
 		C93F976F1B0233770078195A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C93F976E1B0233770078195A /* main.m */; };
 		C93F97721B0233770078195A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C93F97711B0233770078195A /* AppDelegate.m */; };
 		C93F97751B0233770078195A /* EBookStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C93F97731B0233770078195A /* EBookStore.xcdatamodeld */; };
@@ -51,6 +54,12 @@
 /* Begin PBXFileReference section */
 		083997DF5DD8CF9DC9652924 /* Pods-EBookStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EBookStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EBookStore/Pods-EBookStore.debug.xcconfig"; sourceTree = "<group>"; };
 		7D863A98C878C434CFBCBDF2 /* Pods-EBookStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EBookStore.release.xcconfig"; path = "Pods/Target Support Files/Pods-EBookStore/Pods-EBookStore.release.xcconfig"; sourceTree = "<group>"; };
+		B3C24C7E1B0305D600E397A7 /* EBQRCodeMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBQRCodeMaker.h; sourceTree = "<group>"; };
+		B3C24C7F1B0305D600E397A7 /* EBQRCodeMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBQRCodeMaker.m; sourceTree = "<group>"; };
+		B3C24C801B0305D600E397A7 /* GCDMulticastDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDMulticastDelegate.h; sourceTree = "<group>"; };
+		B3C24C811B0305D600E397A7 /* GCDMulticastDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDMulticastDelegate.m; sourceTree = "<group>"; };
+		B3C24C821B0305D600E397A7 /* LWIconTextAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWIconTextAttachment.h; sourceTree = "<group>"; };
+		B3C24C831B0305D600E397A7 /* LWIconTextAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWIconTextAttachment.m; sourceTree = "<group>"; };
 		C93F97691B0233770078195A /* EBookStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EBookStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C93F976D1B0233770078195A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C93F976E1B0233770078195A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -138,6 +147,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B3C24C7D1B0305D600E397A7 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B3C24C7E1B0305D600E397A7 /* EBQRCodeMaker.h */,
+				B3C24C7F1B0305D600E397A7 /* EBQRCodeMaker.m */,
+				B3C24C801B0305D600E397A7 /* GCDMulticastDelegate.h */,
+				B3C24C811B0305D600E397A7 /* GCDMulticastDelegate.m */,
+				B3C24C821B0305D600E397A7 /* LWIconTextAttachment.h */,
+				B3C24C831B0305D600E397A7 /* LWIconTextAttachment.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		C93F97601B0233770078195A = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +203,7 @@
 				C93F976D1B0233770078195A /* Info.plist */,
 				C93F976E1B0233770078195A /* main.m */,
 				C93F97D11B0238910078195A /* MacroDefinition.h */,
+				B3C24C7D1B0305D600E397A7 /* Utilities */,
 				C93F97981B0237BF0078195A /* 书 */,
 			);
 			name = "Supporting Files";
@@ -409,9 +432,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C93F97751B0233770078195A /* EBookStore.xcdatamodeld in Sources */,
+				B3C24C861B0305D600E397A7 /* EBQRCodeMaker.m in Sources */,
 				C93F97B41B0237C90078195A /* BookContentView.m in Sources */,
 				C93F97C81B0237D50078195A /* BookShelfCollectionViewLayout.m in Sources */,
 				C93F97C41B0237D50078195A /* BookShelfViewController.m in Sources */,
+				B3C24C871B0305D600E397A7 /* GCDMulticastDelegate.m in Sources */,
 				C93F97B31B0237C90078195A /* BookMasterViewController.m in Sources */,
 				C93F97C61B0237D50078195A /* BookShelfCollectionViewCell.m in Sources */,
 				C93F97C51B0237D50078195A /* BookShelfCollectionView.m in Sources */,
@@ -425,6 +450,7 @@
 				C93F976F1B0233770078195A /* main.m in Sources */,
 				C93F97B21B0237C90078195A /* BookPageViewController.m in Sources */,
 				C93F97B11B0237C90078195A /* BookContentDataSource.m in Sources */,
+				B3C24C881B0305D600E397A7 /* LWIconTextAttachment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,6 +577,7 @@
 			baseConfigurationReference = 083997DF5DD8CF9DC9652924 /* Pods-EBookStore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = EBookStore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

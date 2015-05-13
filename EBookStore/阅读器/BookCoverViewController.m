@@ -1,28 +1,23 @@
 //
-//  BookPageContentViewController.m
-//  BookStore
+//  BookCoverViewController.m
+//  EBookStore
 //
-//  Created by 李巍 on 15/2/5.
-//  Copyright (c) 2015年 LW. All rights reserved.
+//  Created by 李巍 on 15/5/13.
+//  Copyright (c) 2015年 李巍. All rights reserved.
 //
 
-#import "BookPageContentViewController.h"
+#import "BookCoverViewController.h"
+#import "MacroDefinition.h"
 #import "BookNavBarView.h"
 #import "BookContentDataSource.h"
 
-#import "MacroDefinition.h"
-
-@interface BookPageContentViewController () <BookNavBarViewProtocol>
+@interface BookCoverViewController () <BookNavBarViewProtocol>
 
 @property (strong, nonatomic) BookNavBarView *navView;
 
-@property (weak, nonatomic) IBOutlet UILabel *pageLabel;
-
-@property (assign, nonatomic) BOOL isShowText;
-
 @end
 
-@implementation BookPageContentViewController
+@implementation BookCoverViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,28 +28,11 @@
 	self.navView = nav;
 	UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapContent:)];
 	[self.view addGestureRecognizer:tapGesture];
-	
-	self.pageLabel.text = [NSString stringWithFormat:@"第  %zd  页", self.pageIndex];
-	self.isShowText = NO;
 }
 
-- (void)viewDidLayoutSubviews {
-	[super viewDidLayoutSubviews];
-	CGRect frame = self.contentView.frame;
-	if (frame.origin.y == -20) {
-		frame.origin.y = 0;
-		frame.size.height -= 20;
-		self.contentView.frame = frame;
-	}
-	if (!self.isShowText) {
-		[self showPageContent];
-	}
-}
-
-- (void)showPageContent {
-	// 设置内容
-	[self.contentView.textStorage setAttributedString:[[BookContentDataSource sharedInstance] contentAtPageIndex:self.pageIndex - 1 withContainerSize:self.contentView.textContainer.size]];
-	self.isShowText = YES;
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (void)tapContent:(UITapGestureRecognizer *)tap {
@@ -79,11 +57,6 @@
 - (void)backAction {
 	[[BookContentDataSource sharedInstance] restore];
 	[self dismissViewControllerAnimated:YES completion:NULL];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*

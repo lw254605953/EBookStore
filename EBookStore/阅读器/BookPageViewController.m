@@ -7,12 +7,18 @@
 //
 
 #import "BookPageViewController.h"
+#import "BookCoverViewController.h"
 #import "BookPageContentViewController.h"
 #import "BookContentDataSource.h"
 #import <SVProgressHUD/SVProgressHUD.h>
 
 #import "EBookModel.h"
 #import "CoreDataManager.h"
+
+
+#define PAGE_COVER_INDEX 0
+#define PAGE_START_INDEX 1
+
 
 @interface BookPageViewController ()
 
@@ -31,7 +37,6 @@
     [super awakeFromNib];
 	self.delegate = self;
 	self.dataSource = self;
-	self.maxPageCount = [[BookContentDataSource sharedInstance] maxPageCount];
 }
 
 - (void)viewDidLoad {
@@ -42,11 +47,18 @@
 - (void)setupWithFirstPage:(NSInteger)pageIndex {
 	//从第一页开始计算页码，但是封面是第0页
 	self.currentPageIndex = pageIndex;
-	self.templePageIndex = pageIndex;
-	// 设置书籍的第一页
-	[self setViewControllers:@[[self bookContentControllerAtIndex:pageIndex]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:^(BOOL finished) {
-		[SVProgressHUD dismiss];
-	}];
+	self.maxPageCount = [[BookContentDataSource sharedInstance] maxPageCount];
+	if (pageIndex == 0) {
+		// 设置书籍的第一页
+		[self setViewControllers:@[[self bookCoverController]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:^(BOOL finished) {
+			[SVProgressHUD dismiss];
+		}];
+	}else {
+		// 设置书籍的第一页
+		[self setViewControllers:@[[self bookContentControllerAtIndex:self.currentPageIndex]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:^(BOOL finished) {
+			[SVProgressHUD dismiss];
+		}];
+	}
 }
 
 - (void)setCurrentPageIndex:(NSInteger)currentPageIndex {
@@ -61,10 +73,16 @@
 
 #pragma mark -
 
+- (BookCoverViewController *)bookCoverController {
+	self.templePageIndex = 0;
+	BookCoverViewController *cover = [self.storyboard instantiateViewControllerWithIdentifier:@"BookCoverViewController"];
+	return cover;
+}
+
 - (BookPageContentViewController *)bookContentControllerAtIndex:(NSUInteger)index {
 	self.templePageIndex = index;
 	BookPageContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"BookPageContentViewController"];
-	pageContentViewController.pageIndex = index;
+	pageContentViewController.pageIndex = self.templePageIndex;
 	return pageContentViewController;
 }
 
@@ -79,6 +97,9 @@
 		return nil;
 	}
 	index--;
+	if (index == 0) {
+		return [self bookCoverController];
+	}
 	return [self bookContentControllerAtIndex:index];
 }
 

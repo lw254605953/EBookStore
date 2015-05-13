@@ -131,6 +131,39 @@
             </objects>
             <point key="canvasLocation" x="2614" y="245"/>
         </scene>
+        <!--Book Cover View Controller-->
+        <scene sceneID="daY-PY-3PV">
+            <objects>
+                <viewController storyboardIdentifier="BookCoverViewController" id="FGq-Ih-8K8" customClass="BookCoverViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="phI-4s-yDW"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cqi-Zm-EvB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fxd-Ly-Eqs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zix-oS-osf" customClass="BookCoverView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zix-oS-osf" firstAttribute="top" secondItem="Fxd-Ly-Eqs" secondAttribute="top" id="2fF-me-Hqd"/>
+                            <constraint firstItem="zix-oS-osf" firstAttribute="leading" secondItem="Fxd-Ly-Eqs" secondAttribute="leading" id="3ik-Wu-zLe"/>
+                            <constraint firstItem="Cqi-Zm-EvB" firstAttribute="top" secondItem="zix-oS-osf" secondAttribute="bottom" id="CHd-AI-1db"/>
+                            <constraint firstAttribute="trailing" secondItem="zix-oS-osf" secondAttribute="trailing" id="KcH-hm-imY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="coverView" destination="zix-oS-osf" id="0Fg-bq-CeS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ktl-ec-qlh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2614" y="982"/>
+        </scene>
         <!--Book Page Content View Controller-->
         <scene sceneID="KCh-A2-eV5">
             <objects>

@@ -77,11 +77,6 @@
             [self.pageContainers addObject:container];
         }
     }
-//	if (index >= [self.pageContainers count]) {
-//		NSTextContainer *container = [[NSTextContainer alloc] initWithSize:size];
-//		[self.contentLayoutManager addTextContainer:container];
-//		[self.pageContainers addObject:container];
-//	}
     return self.pageContainers[index];
 }
 

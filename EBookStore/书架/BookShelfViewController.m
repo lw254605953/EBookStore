@@ -11,7 +11,7 @@
 #import "BookShelfCollectionViewCell.h"
 
 #import "BookMasterViewController.h"
-#import "BookContentDataSource.h"
+#import "TXTBookDataSource.h"
 
 #import <SVProgressHUD/SVProgressHUD.h>
 
@@ -94,7 +94,7 @@
 			[[CoreDataManager sharedInstance] insertModelWithJSON:book];
 			eBook = [[CoreDataManager sharedInstance] fetchEBookWithBookIdentifier:book[@"id"]];
 		}
-		[[BookContentDataSource sharedInstance] setupWithBook:eBook];
+		[[TXTBookDataSource sharedInstance] setupWithBook:eBook];
 	});
 	
 	BookMasterViewController *master = [self.storyboard instantiateViewControllerWithIdentifier:@"BookMasterViewController"];

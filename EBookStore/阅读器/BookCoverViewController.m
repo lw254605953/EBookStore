@@ -9,7 +9,7 @@
 #import "BookCoverViewController.h"
 #import "MacroDefinition.h"
 #import "BookNavBarView.h"
-#import "BookContentDataSource.h"
+#import "TXTBookDataSource.h"
 
 @interface BookCoverViewController () <BookNavBarViewProtocol>
 
@@ -55,7 +55,7 @@
 }
 
 - (void)backAction {
-	[[BookContentDataSource sharedInstance] restore];
+	[[TXTBookDataSource sharedInstance] restore];
 	[self dismissViewControllerAnimated:YES completion:NULL];
 }
 

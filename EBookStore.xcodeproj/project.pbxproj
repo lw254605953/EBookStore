@@ -12,6 +12,10 @@
 		B3C24C881B0305D600E397A7 /* LWIconTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C24C831B0305D600E397A7 /* LWIconTextAttachment.m */; };
 		B3C24C8C1B033B3100E397A7 /* BookCoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C24C8B1B033B3100E397A7 /* BookCoverViewController.m */; };
 		B3C24C8F1B033B4200E397A7 /* BookCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C24C8E1B033B4200E397A7 /* BookCoverView.m */; };
+		B3C24C911B034B2900E397A7 /* iOS上的图形和动画处理.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B3C24C901B034B2900E397A7 /* iOS上的图形和动画处理.pdf */; };
+		B3C24C941B03527D00E397A7 /* TXTBookDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C24C931B03527D00E397A7 /* TXTBookDataSource.m */; };
+		B3C24C971B0352B500E397A7 /* PDFBookDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C24C961B0352B500E397A7 /* PDFBookDataSource.m */; };
+		B3C24C9A1B0352CE00E397A7 /* EPubBookDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C24C991B0352CE00E397A7 /* EPubBookDataSource.m */; };
 		C93F976F1B0233770078195A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C93F976E1B0233770078195A /* main.m */; };
 		C93F97721B0233770078195A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C93F97711B0233770078195A /* AppDelegate.m */; };
 		C93F97751B0233770078195A /* EBookStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C93F97731B0233770078195A /* EBookStore.xcdatamodeld */; };
@@ -25,7 +29,6 @@
 		C93F97A21B0237BF0078195A /* 最熟悉的陌生人.txt in Resources */ = {isa = PBXBuildFile; fileRef = C93F979C1B0237BF0078195A /* 最熟悉的陌生人.txt */; };
 		C93F97A31B0237BF0078195A /* 爱在仙境的日子.txt in Resources */ = {isa = PBXBuildFile; fileRef = C93F979D1B0237BF0078195A /* 爱在仙境的日子.txt */; };
 		C93F97A41B0237BF0078195A /* 雪山飞狐.txt in Resources */ = {isa = PBXBuildFile; fileRef = C93F979E1B0237BF0078195A /* 雪山飞狐.txt */; };
-		C93F97B11B0237C90078195A /* BookContentDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C93F97A51B0237C90078195A /* BookContentDataSource.m */; };
 		C93F97B21B0237C90078195A /* BookPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93F97A61B0237C90078195A /* BookPageViewController.m */; };
 		C93F97B31B0237C90078195A /* BookMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93F97A71B0237C90078195A /* BookMasterViewController.m */; };
 		C93F97B41B0237C90078195A /* BookContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C93F97AA1B0237C90078195A /* BookContentView.m */; };
@@ -66,6 +69,13 @@
 		B3C24C8B1B033B3100E397A7 /* BookCoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookCoverViewController.m; sourceTree = "<group>"; };
 		B3C24C8D1B033B4200E397A7 /* BookCoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookCoverView.h; sourceTree = "<group>"; };
 		B3C24C8E1B033B4200E397A7 /* BookCoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookCoverView.m; sourceTree = "<group>"; };
+		B3C24C901B034B2900E397A7 /* iOS上的图形和动画处理.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "iOS上的图形和动画处理.pdf"; sourceTree = "<group>"; };
+		B3C24C921B03527D00E397A7 /* TXTBookDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TXTBookDataSource.h; path = EBookStore/Model/TXTBookDataSource.h; sourceTree = SOURCE_ROOT; };
+		B3C24C931B03527D00E397A7 /* TXTBookDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TXTBookDataSource.m; path = EBookStore/Model/TXTBookDataSource.m; sourceTree = SOURCE_ROOT; };
+		B3C24C951B0352B500E397A7 /* PDFBookDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFBookDataSource.h; sourceTree = "<group>"; };
+		B3C24C961B0352B500E397A7 /* PDFBookDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFBookDataSource.m; sourceTree = "<group>"; };
+		B3C24C981B0352CE00E397A7 /* EPubBookDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPubBookDataSource.h; sourceTree = "<group>"; };
+		B3C24C991B0352CE00E397A7 /* EPubBookDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPubBookDataSource.m; sourceTree = "<group>"; };
 		C93F97691B0233770078195A /* EBookStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EBookStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C93F976D1B0233770078195A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C93F976E1B0233770078195A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -84,10 +94,8 @@
 		C93F979C1B0237BF0078195A /* 最熟悉的陌生人.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "最熟悉的陌生人.txt"; sourceTree = "<group>"; };
 		C93F979D1B0237BF0078195A /* 爱在仙境的日子.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "爱在仙境的日子.txt"; sourceTree = "<group>"; };
 		C93F979E1B0237BF0078195A /* 雪山飞狐.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "雪山飞狐.txt"; sourceTree = "<group>"; };
-		C93F97A51B0237C90078195A /* BookContentDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookContentDataSource.m; sourceTree = "<group>"; };
 		C93F97A61B0237C90078195A /* BookPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookPageViewController.m; sourceTree = "<group>"; };
 		C93F97A71B0237C90078195A /* BookMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookMasterViewController.m; sourceTree = "<group>"; };
-		C93F97A81B0237C90078195A /* BookContentDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookContentDataSource.h; sourceTree = "<group>"; };
 		C93F97A91B0237C90078195A /* BookContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookContentView.h; sourceTree = "<group>"; };
 		C93F97AA1B0237C90078195A /* BookContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookContentView.m; sourceTree = "<group>"; };
 		C93F97AB1B0237C90078195A /* BookMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookMasterViewController.h; sourceTree = "<group>"; };
@@ -245,8 +253,6 @@
 				C93F97AA1B0237C90078195A /* BookContentView.m */,
 				C93F97AC1B0237C90078195A /* BookNavBarView.h */,
 				C93F97AD1B0237C90078195A /* BookNavBarView.m */,
-				C93F97A81B0237C90078195A /* BookContentDataSource.h */,
-				C93F97A51B0237C90078195A /* BookContentDataSource.m */,
 				B3C24C8A1B033B3100E397A7 /* BookCoverViewController.h */,
 				B3C24C8B1B033B3100E397A7 /* BookCoverViewController.m */,
 				B3C24C8D1B033B4200E397A7 /* BookCoverView.h */,
@@ -278,6 +284,12 @@
 		C93F97971B0233B60078195A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B3C24C921B03527D00E397A7 /* TXTBookDataSource.h */,
+				B3C24C931B03527D00E397A7 /* TXTBookDataSource.m */,
+				B3C24C951B0352B500E397A7 /* PDFBookDataSource.h */,
+				B3C24C961B0352B500E397A7 /* PDFBookDataSource.m */,
+				B3C24C981B0352CE00E397A7 /* EPubBookDataSource.h */,
+				B3C24C991B0352CE00E397A7 /* EPubBookDataSource.m */,
 				C93F97CC1B0237E30078195A /* CoreDataManager.h */,
 				C93F97CB1B0237E30078195A /* CoreDataManager.m */,
 				C93F97CE1B0237FB0078195A /* EBookModel.h */,
@@ -295,6 +307,7 @@
 				C93F979C1B0237BF0078195A /* 最熟悉的陌生人.txt */,
 				C93F979D1B0237BF0078195A /* 爱在仙境的日子.txt */,
 				C93F979E1B0237BF0078195A /* 雪山飞狐.txt */,
+				B3C24C901B034B2900E397A7 /* iOS上的图形和动画处理.pdf */,
 			);
 			path = "书";
 			sourceTree = "<group>";
@@ -389,6 +402,7 @@
 				C93F977D1B0233770078195A /* Images.xcassets in Resources */,
 				C93F97C71B0237D50078195A /* BookShelfCollectionViewCell.xib in Resources */,
 				C93F97A11B0237BF0078195A /* 千年诅咒.txt in Resources */,
+				B3C24C911B034B2900E397A7 /* iOS上的图形和动画处理.pdf in Resources */,
 				C93F979F1B0237BF0078195A /* Books.plist in Resources */,
 				C93F97A31B0237BF0078195A /* 爱在仙境的日子.txt in Resources */,
 			);
@@ -445,7 +459,9 @@
 				C93F97751B0233770078195A /* EBookStore.xcdatamodeld in Sources */,
 				B3C24C861B0305D600E397A7 /* EBQRCodeMaker.m in Sources */,
 				C93F97B41B0237C90078195A /* BookContentView.m in Sources */,
+				B3C24C941B03527D00E397A7 /* TXTBookDataSource.m in Sources */,
 				C93F97C81B0237D50078195A /* BookShelfCollectionViewLayout.m in Sources */,
+				B3C24C971B0352B500E397A7 /* PDFBookDataSource.m in Sources */,
 				C93F97C41B0237D50078195A /* BookShelfViewController.m in Sources */,
 				B3C24C871B0305D600E397A7 /* GCDMulticastDelegate.m in Sources */,
 				B3C24C8F1B033B4200E397A7 /* BookCoverView.m in Sources */,
@@ -453,6 +469,7 @@
 				C93F97C61B0237D50078195A /* BookShelfCollectionViewCell.m in Sources */,
 				C93F97C51B0237D50078195A /* BookShelfCollectionView.m in Sources */,
 				C93F97B51B0237C90078195A /* BookNavBarView.m in Sources */,
+				B3C24C9A1B0352CE00E397A7 /* EPubBookDataSource.m in Sources */,
 				C93F97CA1B0237D50078195A /* BookShelfViewLayoutAttributes.m in Sources */,
 				C93F97C91B0237D50078195A /* BookShelfDecorationView.m in Sources */,
 				C93F97CD1B0237E30078195A /* CoreDataManager.m in Sources */,
@@ -461,7 +478,6 @@
 				C93F97B61B0237C90078195A /* BookPageContentViewController.m in Sources */,
 				C93F976F1B0233770078195A /* main.m in Sources */,
 				C93F97B21B0237C90078195A /* BookPageViewController.m in Sources */,
-				C93F97B11B0237C90078195A /* BookContentDataSource.m in Sources */,
 				B3C24C881B0305D600E397A7 /* LWIconTextAttachment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

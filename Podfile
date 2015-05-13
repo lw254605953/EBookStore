@@ -34,6 +34,9 @@ pod 'Mantle', '1.5.4'
 ## Èº‹≈≈∞Ê≤ºæ÷
 pod 'KRLCollectionViewGridLayout'
 
+pod 'KissXML'
+pod 'SSZipArchive'
+
 end
 
 target 'EBookStoreTests' do

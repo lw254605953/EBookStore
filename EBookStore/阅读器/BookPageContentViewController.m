@@ -8,7 +8,7 @@
 
 #import "BookPageContentViewController.h"
 #import "BookNavBarView.h"
-#import "BookContentDataSource.h"
+#import "TXTBookDataSource.h"
 
 #import "MacroDefinition.h"
 
@@ -47,13 +47,13 @@
 		self.contentView.frame = frame;
 	}
 	if (!self.isShowText) {
-		[self showPageContent];
+		[self showTXTPageContent];
 	}
 }
 
-- (void)showPageContent {
+- (void)showTXTPageContent {
 	// 设置内容
-	[self.contentView.textStorage setAttributedString:[[BookContentDataSource sharedInstance] contentAtPageIndex:self.pageIndex - 1 withContainerSize:self.contentView.textContainer.size]];
+	[self.contentView.textStorage setAttributedString:[[TXTBookDataSource sharedInstance] contentAtPageIndex:self.pageIndex - 1 withContainerSize:self.contentView.textContainer.size]];
 	self.isShowText = YES;
 }
 
@@ -77,7 +77,7 @@
 }
 
 - (void)backAction {
-	[[BookContentDataSource sharedInstance] restore];
+	[[TXTBookDataSource sharedInstance] restore];
 	[self dismissViewControllerAnimated:YES completion:NULL];
 }
 

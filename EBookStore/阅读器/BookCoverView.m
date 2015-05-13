@@ -7,7 +7,7 @@
 //
 
 #import "BookCoverView.h"
-#import "BookContentDataSource.h"
+#import "TXTBookDataSource.h"
 
 @implementation BookCoverView
 
@@ -20,7 +20,7 @@
 	UIColor *magentaColor = [UIColor colorWithRed:0.5f green:0.0f blue:0.5f alpha:1.0f];
 	[magentaColor set];
 	UIFont *helveticaBold = [UIFont fontWithName:@"HelveticaNeue-Bold" size:30.0f];
-	NSString *myString = [BookContentDataSource sharedInstance].eBook.title;
+	NSString *myString = [TXTBookDataSource sharedInstance].eBook.title;
 	[myString drawInRect:CGRectMake(25, 100, self.frame.size.width - 50, 40) withAttributes:@{NSFontAttributeName:helveticaBold, NSForegroundColorAttributeName:magentaColor}];
 }
 

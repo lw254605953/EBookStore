@@ -21,7 +21,8 @@
              @"currentPage"     :[NSNull null],
              @"maxPageCount"    :[NSNull null],
              @"author"          :@"author",
-             @"type"            :@"type"};
+             @"type"            :@"type",
+			 @"filetype"		:@"filetype"};
 }
 
 + (NSString *)managedObjectEntityName {
@@ -35,7 +36,8 @@
              @"currentPage"     :@"currentPage",
              @"maxPageCount"    :@"maxPageCount",
              @"author"          :@"author",
-             @"type"            :@"type"};
+             @"type"            :@"type",
+			 @"filetype"		:@"filetype"};
 }
 
 + (NSSet *)propertyKeysForManagedObjectUniquing {

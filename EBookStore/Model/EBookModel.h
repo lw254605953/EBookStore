@@ -17,6 +17,13 @@ typedef NS_ENUM(NSInteger, EBookType) {
     EBookTypeKongbu
 };
 
+typedef NS_ENUM(NSInteger, EBookFileType) {
+	EBookFileTypeTXT = 0,
+	EBookFileTypePDF,
+	EBookFileTypeEPub,
+	EBookFileTypeWord
+};
+
 @interface EBookModel : MTLModel <MTLJSONSerializing, MTLManagedObjectSerializing>
 
 /*!
@@ -61,6 +68,13 @@ typedef NS_ENUM(NSInteger, EBookType) {
  *  @brief  书籍类型
  */
 @property (assign, nonatomic) EBookType type;
+
+/*!
+ *  @author Megatron, 2015-05-11
+ *
+ *  @brief  书文件类型
+ */
+@property (assign, nonatomic) EBookFileType filetype;
 
 + (NSString *)entityName;
 

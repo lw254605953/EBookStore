@@ -13,6 +13,8 @@
 		<string>万年灵异梦殇</string>
 		<key>type</key>
 		<string>3</string>
+		<key>filetype</key>
+		<string>txt</string>
 	</dict>
 	<dict>
 		<key>id</key>
@@ -25,6 +27,8 @@
 		<string>金庸</string>
 		<key>type</key>
 		<string>0</string>
+		<key>filetype</key>
+		<string>txt</string>
 	</dict>
 	<dict>
 		<key>id</key>
@@ -37,6 +41,8 @@
 		<string>无名1</string>
 		<key>type</key>
 		<string>1</string>
+		<key>filetype</key>
+		<string>txt</string>
 	</dict>
 	<dict>
 		<key>id</key>
@@ -49,6 +55,8 @@
 		<string>无名2</string>
 		<key>type</key>
 		<string>1</string>
+		<key>filetype</key>
+		<string>txt</string>
 	</dict>
 	<dict>
 		<key>id</key>
@@ -61,6 +69,22 @@
 		<string>无名3</string>
 		<key>type</key>
 		<string>1</string>
+		<key>filetype</key>
+		<string>txt</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<string>100006</string>
+		<key>img</key>
+		<string></string>
+		<key>title</key>
+		<string>iOS上的图形和动画处理</string>
+		<key>author</key>
+		<string>Apple</string>
+		<key>type</key>
+		<string>1</string>
+		<key>filetype</key>
+		<string>pdf</string>
 	</dict>
 </array>
 </plist>

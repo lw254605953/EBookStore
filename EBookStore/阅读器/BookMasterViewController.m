@@ -11,7 +11,7 @@
 #import "BookPageContentViewController.h"
 
 #import "EBookModel.h"
-#import "BookContentDataSource.h"
+#import "TXTBookDataSource.h"
 
 @interface BookMasterViewController ()
 
@@ -52,7 +52,7 @@
 	}
 	__weak typeof(self) weakSelf = self;
 	dispatch_async(dispatch_get_main_queue(), ^{
-		[weakSelf.pageViewController setupWithFirstPage:[BookContentDataSource sharedInstance].eBook.currentPage];
+		[weakSelf.pageViewController setupWithFirstPage:[TXTBookDataSource sharedInstance].eBook.currentPage];
 	});
 }
 

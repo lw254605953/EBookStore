@@ -9,7 +9,7 @@
 #import "BookPageViewController.h"
 #import "BookCoverViewController.h"
 #import "BookPageContentViewController.h"
-#import "BookContentDataSource.h"
+#import "TXTBookDataSource.h"
 #import <SVProgressHUD/SVProgressHUD.h>
 
 #import "EBookModel.h"
@@ -47,7 +47,7 @@
 - (void)setupWithFirstPage:(NSInteger)pageIndex {
 	//从第一页开始计算页码，但是封面是第0页
 	self.currentPageIndex = pageIndex;
-	self.maxPageCount = [[BookContentDataSource sharedInstance] maxPageCount];
+	self.maxPageCount = [[TXTBookDataSource sharedInstance] maxPageCount];
 	if (pageIndex == 0) {
 		// 设置书籍的第一页
 		[self setViewControllers:@[[self bookCoverController]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:^(BOOL finished) {
@@ -64,7 +64,7 @@
 - (void)setCurrentPageIndex:(NSInteger)currentPageIndex {
 	_currentPageIndex = currentPageIndex;
     
-    EBookModel *model = [BookContentDataSource sharedInstance].eBook;
+    EBookModel *model = [TXTBookDataSource sharedInstance].eBook;
 	if (model) {
 		model.currentPage = currentPageIndex;
 		[[CoreDataManager sharedInstance] updateModel:model];

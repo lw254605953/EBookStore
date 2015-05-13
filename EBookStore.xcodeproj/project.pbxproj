@@ -163,10 +163,10 @@
 			children = (
 				C93F97701B0233770078195A /* AppDelegate.h */,
 				C93F97711B0233770078195A /* AppDelegate.m */,
+				C93F97791B0233770078195A /* Main.storyboard */,
 				C93F97951B0233B60078195A /* 阅读器 */,
 				C93F97961B0233B60078195A /* 书架 */,
 				C93F97971B0233B60078195A /* Model */,
-				C93F97791B0233770078195A /* Main.storyboard */,
 				C93F977C1B0233770078195A /* Images.xcassets */,
 				C93F977E1B0233770078195A /* LaunchScreen.xib */,
 				C93F97731B0233770078195A /* EBookStore.xcdatamodeld */,

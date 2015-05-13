@@ -78,26 +78,24 @@
 #pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-	NSDictionary *book = self.searchResults[indexPath.item];
-	EBookModel *eBook = [[CoreDataManager sharedInstance] fetchEBookWithBookIdentifier:book[@"id"]];
-	if (eBook == nil) {
-		[[CoreDataManager sharedInstance] insertModelWithJSON:book];
-        eBook = [[CoreDataManager sharedInstance] fetchEBookWithBookIdentifier:book[@"id"]];
-	}
-    
-    BookMasterViewController *master = [self.storyboard instantiateViewControllerWithIdentifier:@"BookMasterViewController"];
-    [SVProgressHUD showWithStatus:@"正在读取数据"];
-    
-    __weak typeof(self) weakSelf = self;
+	__weak typeof(self) weakSelf = self;
 	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [[BookContentDataSource sharedInstance] setupWithBook:eBook];
-        if ([weakSelf.searchBar isFirstResponder]) {
-            [weakSelf.searchBar resignFirstResponder];
-        }
-        [weakSelf presentViewController:master animated:YES completion:^{
-            [SVProgressHUD dismiss];
-        }];
+		NSDictionary *book = weakSelf.searchResults[indexPath.item];
+		EBookModel *eBook = [[CoreDataManager sharedInstance] fetchEBookWithBookIdentifier:book[@"id"]];
+		if (eBook == nil) {
+			[[CoreDataManager sharedInstance] insertModelWithJSON:book];
+			eBook = [[CoreDataManager sharedInstance] fetchEBookWithBookIdentifier:book[@"id"]];
+		}
+		[[BookContentDataSource sharedInstance] setupWithBook:eBook];
 	});
+	if ([self.searchBar isFirstResponder]) {
+		[self.searchBar resignFirstResponder];
+	}
+	[SVProgressHUD showWithStatus:@"正在读取数据"];
+    BookMasterViewController *master = [self.storyboard instantiateViewControllerWithIdentifier:@"BookMasterViewController"];
+	[self presentViewController:master animated:YES completion:^{
+		[SVProgressHUD dismiss];
+	}];
 }
 
 

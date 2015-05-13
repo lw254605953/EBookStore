@@ -36,6 +36,8 @@
     if (self.pageIndex == 0) {
         self.pageLabel.text = @"封面";
     }
+	
+	[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -49,15 +51,22 @@
 }
 
 - (void)tapContent:(UITapGestureRecognizer *)tap {
-	[UIView animateWithDuration:0.4 animations:^{
-		CGRect frame = self.navView.frame;
-		if (frame.size.height == 0) {
-			frame.size.height = 64;
-		}else {
-			frame.size.height = 0;
-		}
-		self.navView.frame = frame;
-	} completion:NULL];
+	CGPoint touchPoint = [tap locationInView:self.view];
+	CGRect rect = CGRectMake(20, 40, self.view.frame.size.width - 20*2, self.view.frame.size.height - 40 - 20);
+	if (CGRectContainsPoint(rect, touchPoint)) {
+		[UIView animateWithDuration:0.4 animations:^{
+			CGRect frame = self.navView.frame;
+			if (frame.size.height == 0) {
+				frame.size.height = 64;
+				[[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+//				[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+			}else {
+				frame.size.height = 0;
+				[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
+			}
+			self.navView.frame = frame;
+		} completion:NULL];
+	}
 }
 
 - (void)backAction {

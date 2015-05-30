@@ -47,7 +47,9 @@
 - (void)setupWithFirstPage:(NSInteger)pageIndex {
 	//从第一页开始计算页码，但是封面是第0页
 	self.currentPageIndex = pageIndex;
+//    self.currentPageIndex = 10;
 	self.maxPageCount = [[TXTBookDataSource sharedInstance] maxPageCount];
+    NSLog(@"书籍最大页数为 : %zd", self.maxPageCount);
 	if (pageIndex == 0) {
 		// 设置书籍的第一页
 		[self setViewControllers:@[[self bookCoverController]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:^(BOOL finished) {

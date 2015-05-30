@@ -11,6 +11,8 @@
 
 // -----------------自定义-------------------
 
+#define BookContentLineMargin 16   // 页脚线（显示第几页）和屏幕的距离
+
 #define DEFAULT_FIRST_PAGE_INDEX 1
 #define DEFAULT_DATA_COUNT_PER_PAGE 20
 

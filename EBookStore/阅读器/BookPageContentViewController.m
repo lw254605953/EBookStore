@@ -53,7 +53,8 @@
 
 - (void)showTXTPageContent {
 	// 设置内容
-	[self.contentView.textStorage setAttributedString:[[TXTBookDataSource sharedInstance] contentAtPageIndex:self.pageIndex - 1 withContainerSize:self.contentView.textContainer.size]];
+	[self.contentView.textStorage setAttributedString:[[TXTBookDataSource sharedInstance] contentAtPageIndex:self.pageIndex - 1]];
+//    NSLog(@"1 w = %f h = %f,  2 w = %f h = %f", self.contentView.textContainer.size.width, self.contentView.textContainer.size.height, SCREEN_WIDTH - 40, SCREEN_HEIGHT - 60);
 	self.isShowText = YES;
 }
 

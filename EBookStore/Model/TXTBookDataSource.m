@@ -7,6 +7,8 @@
 //
 
 #import "TXTBookDataSource.h"
+#import "MacroDefinition.h"
+#import "CoreDataManager.h"
 
 @interface TXTBookDataSource ()
 
@@ -30,7 +32,7 @@
 - (instancetype)init {
 	self = [super init];
 	if (self) {
-		
+        
 	}
 	return self;
 }
@@ -70,10 +72,11 @@
 
 
 
-- (NSTextContainer *)calculatePageContainerAtIndex:(NSInteger)index withContainerSize:(CGSize)size {
+- (NSTextContainer *)calculatePageContainerAtIndex:(NSInteger)index {
+    CGSize containerSize = [self bookContentSize];
 	for (int i = 0; i <= index; i++) {
 		if (i >= [self.pageContainers count]) {
-			NSTextContainer *container = [[NSTextContainer alloc] initWithSize:size];
+			NSTextContainer *container = [[NSTextContainer alloc] initWithSize:containerSize];
 			[self.contentLayoutManager addTextContainer:container];
 			[self.pageContainers addObject:container];
 		}
@@ -81,18 +84,24 @@
 	return self.pageContainers[index];
 }
 
-- (NSAttributedString *)contentAtPageIndex:(NSInteger)index withContainerSize:(CGSize)size {
-	NSTextContainer *container = [self calculatePageContainerAtIndex:index withContainerSize:size];
+- (NSAttributedString *)contentAtPageIndex:(NSInteger)index {
+	NSTextContainer *container = [self calculatePageContainerAtIndex:index];
 	NSRange range = [self.contentLayoutManager glyphRangeForTextContainer:container];
 	return [self.textStorage attributedSubstringFromRange:range];
 }
 
 - (NSUInteger)maxPageCount {
-	NSTextContainer *container = [[NSTextContainer alloc] initWithSize:CGSizeMake([[UIScreen mainScreen] applicationFrame].size.width, FLT_MAX)];
+    if (self.eBook.maxPageCount > 0) {
+        return self.eBook.maxPageCount;
+    }
+    CGSize bookContentSize = [self bookContentSize];
+	NSTextContainer *container = [[NSTextContainer alloc] initWithSize:CGSizeMake(bookContentSize.width, MAXFLOAT)];
 	[self.contentLayoutManager addTextContainer:container];
 	CGRect frame = [self.contentLayoutManager boundingRectForGlyphRange:NSMakeRange(0, [self.contentLayoutManager numberOfGlyphs]) inTextContainer:container];
 	[self.contentLayoutManager removeTextContainerAtIndex:[self.contentLayoutManager.textContainers count] - 1];
-	NSUInteger maxPageCount = frame.size.height / [[UIScreen mainScreen] applicationFrame].size.height + 1;
+	NSUInteger maxPageCount = frame.size.height / bookContentSize.height + 1;
+    self.eBook.maxPageCount = maxPageCount;
+    [[CoreDataManager sharedInstance] updateModel:self.eBook];
 	return maxPageCount;
 }
 
@@ -111,6 +120,10 @@
 	//	NSDictionary *attributes = @{NSParagraphStyleAttributeName:paragraphStyle, NSFontAttributeName:[UIFont fontWithName:@"Snell Roundhand" size:16.0f], NSForegroundColorAttributeName:[UIColor blackColor]};
 	NSDictionary *attributes = @{NSParagraphStyleAttributeName:paragraphStyle, NSFontAttributeName:[UIFont systemFontOfSize:16.0f], NSForegroundColorAttributeName:[UIColor blackColor]};
 	return attributes;
+}
+
+- (CGSize)bookContentSize {
+    return CGSizeMake(SCREEN_WIDTH - 20 - 20, SCREEN_HEIGHT - 40 - 20 - BookContentLineMargin);
 }
 
 @end

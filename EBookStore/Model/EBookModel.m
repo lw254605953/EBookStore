@@ -19,7 +19,7 @@
              @"title"           :@"title",
              @"coverImage"      :@"img",
              @"currentPage"     :[NSNull null],
-             @"maxPageCount"    :[NSNull null],
+             @"maxPageCount"    :@"maxPageCount",
              @"author"          :@"author",
              @"type"            :@"type",
 			 @"filetype"		:@"filetype"};

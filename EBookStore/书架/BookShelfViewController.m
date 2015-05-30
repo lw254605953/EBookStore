@@ -88,9 +88,10 @@
 - (void)loadBookWithIndex:(NSInteger)index {
 	__weak typeof(self) weakSelf = self;
 	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-		NSDictionary *book = weakSelf.searchResults[index];
+		NSMutableDictionary *book = [NSMutableDictionary dictionaryWithDictionary:weakSelf.searchResults[index]];
 		EBookModel *eBook = [[CoreDataManager sharedInstance] fetchEBookWithBookIdentifier:book[@"id"]];
 		if (eBook == nil) {
+            [book setValue:@(-1) forKey:@"maxPageCount"];
 			[[CoreDataManager sharedInstance] insertModelWithJSON:book];
 			eBook = [[CoreDataManager sharedInstance] fetchEBookWithBookIdentifier:book[@"id"]];
 		}

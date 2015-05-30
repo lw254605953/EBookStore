@@ -34,8 +34,7 @@
 
 - (BOOL)insertModel:(EBookModel *)model {
     NSError *error = nil;
-    id obj = [MTLManagedObjectAdapter managedObjectFromModel:model insertingIntoContext:self.managedObjectContext error:&error];
-    NSLog(@"obj class = %@", [obj class]);
+    [MTLManagedObjectAdapter managedObjectFromModel:model insertingIntoContext:self.managedObjectContext error:&error];
     if (error) {
         NSLog(@"insertModelByCoreData 插入新对象错误：%@", [error localizedDescription]);
         return NO;

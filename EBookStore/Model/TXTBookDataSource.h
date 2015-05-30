@@ -19,7 +19,7 @@
 - (void)restore;
 
 
-- (NSAttributedString *)contentAtPageIndex:(NSInteger)index withContainerSize:(CGSize)size;
+- (NSAttributedString *)contentAtPageIndex:(NSInteger)index;
 
 - (NSDictionary *)contentAttributes;
 

@@ -42,12 +42,15 @@
 - (void)setupWithBook:(EBookModel *)model {
 	self.eBook = model;
 	if (!self.pageContainers) {
-		self.pageContainers = [[NSMutableArray alloc] initWithCapacity:20];
+		self.pageContainers = [[NSMutableArray alloc] initWithCapacity:100];
 	}
 	self.textStorage = [[NSTextStorage alloc] initWithString:[self loadTXTBookWithName:model.title]];
 	[self.textStorage addAttributes:[self contentAttributes] range:NSMakeRange(0, [self.textStorage.string length])];
 	self.contentLayoutManager = [[NSLayoutManager alloc] init];
 	[self.textStorage addLayoutManager:self.contentLayoutManager];
+
+	[self layoutTextContainers];
+
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"BookDataIsRedeyForShowNotification" object:nil];
 }
 
@@ -68,24 +71,27 @@
 	return string;
 }
 
-
-
-
-
-- (NSTextContainer *)calculatePageContainerAtIndex:(NSInteger)index {
-    CGSize containerSize = [self bookContentSize];
-	for (int i = 0; i <= index; i++) {
-		if (i >= [self.pageContainers count]) {
-			NSTextContainer *container = [[NSTextContainer alloc] initWithSize:containerSize];
-			[self.contentLayoutManager addTextContainer:container];
-			[self.pageContainers addObject:container];
-		}
+- (void)layoutTextContainers {
+	NSUInteger lastRenderedGlyph = 0;
+	CGFloat currentXOffset = 0;
+	while (lastRenderedGlyph < self.contentLayoutManager.numberOfGlyphs) {
+		CGRect textViewFrame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+		CGSize columnSize = [self bookContentSize];
+		
+		NSTextContainer *textContainer = [[NSTextContainer alloc] initWithSize:columnSize];
+		[self.contentLayoutManager addTextContainer:textContainer];
+		[self.pageContainers addObject:textContainer];
+		
+		// Increase the current offset
+		currentXOffset += CGRectGetWidth(textViewFrame);
+		
+		// And find the index of the glyph we've just rendered
+		lastRenderedGlyph = NSMaxRange([self.contentLayoutManager glyphRangeForTextContainer:textContainer]);
 	}
-	return self.pageContainers[index];
 }
 
 - (NSAttributedString *)contentAtPageIndex:(NSInteger)index {
-	NSTextContainer *container = [self calculatePageContainerAtIndex:index];
+	NSTextContainer *container = self.pageContainers[index];
 	NSRange range = [self.contentLayoutManager glyphRangeForTextContainer:container];
 	return [self.textStorage attributedSubstringFromRange:range];
 }
@@ -94,15 +100,10 @@
     if (self.eBook.maxPageCount > 0) {
         return self.eBook.maxPageCount;
     }
-    CGSize bookContentSize = [self bookContentSize];
-	NSTextContainer *container = [[NSTextContainer alloc] initWithSize:CGSizeMake(bookContentSize.width, MAXFLOAT)];
-	[self.contentLayoutManager addTextContainer:container];
-	CGRect frame = [self.contentLayoutManager boundingRectForGlyphRange:NSMakeRange(0, [self.contentLayoutManager numberOfGlyphs]) inTextContainer:container];
-	[self.contentLayoutManager removeTextContainerAtIndex:[self.contentLayoutManager.textContainers count] - 1];
-	NSUInteger maxPageCount = frame.size.height / bookContentSize.height + 1;
-    self.eBook.maxPageCount = maxPageCount;
-    [[CoreDataManager sharedInstance] updateModel:self.eBook];
-	return maxPageCount;
+	self.eBook.maxPageCount = [self.pageContainers count];
+	[[CoreDataManager sharedInstance] updateModel:self.eBook];
+	
+	return self.eBook.maxPageCount;
 }
 
 - (NSDictionary *)contentAttributes {
